@@ -65,14 +65,14 @@ public class IncomingLegacyMmsConnection extends LegacyMmsConnection implements 
   {
     MmsRadio radio = MmsRadio.getInstance(context);
     Apn contentApn = new Apn(contentLocation, apn.getProxy(), Integer.toString(apn.getPort()), apn.getUsername(), apn.getPassword());
-    if (isCdmaDevice()) {
-      Log.w(TAG, "Connecting directly...");
-      try {
-        return retrieve(contentApn, transactionId, false, false);
-      } catch (IOException | ApnUnavailableException e) {
-        Log.w(TAG, e);
-      }
-    }
+    //if (isCdmaDevice()) {
+    //  Log.w(TAG, "Connecting directly...");
+    //  try {
+    //    return retrieve(contentApn, transactionId, false, false);
+    //  } catch (IOException | ApnUnavailableException e) {
+    //    Log.w(TAG, e);
+    //  }
+    //}
 
     Log.w(TAG, "Changing radio to MMS mode..");
     radio.connect();
